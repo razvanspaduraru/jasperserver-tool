@@ -5,7 +5,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(url = "${nexgen.jasper.uri}", name = "JasperFeign")
+@FeignClient(url = "${jasper.jasper.uri}", name = "JasperFeign")
 public interface JasperFeign {
     @PostMapping("/jasperserver/rest_v2/login")
     Response login(@RequestParam("j_username") String user,

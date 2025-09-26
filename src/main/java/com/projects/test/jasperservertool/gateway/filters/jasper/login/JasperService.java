@@ -7,10 +7,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class JasperService {
-    @Value("${nexgen.jasper.formio-user}")
-    private String jasperFormIoUser;
-    @Value("${nexgen.jasper.formio-password}")
-    private String jasperFormIoPassword;
+    @Value("${jasper.jasper.access-user}")
+    private String jasperaccessUser;
+    @Value("${jasper.jasper.access-password}")
+    private String jasperaccessPassword;
 
     private final JasperFeign jasperFeign;
 
@@ -19,8 +19,8 @@ public class JasperService {
     }
 
     public Response login() {
-        String user = jasperFormIoUser;
-        String password = jasperFormIoPassword;
+        String user = jasperaccessUser;
+        String password = jasperaccessPassword;
         Response response = jasperFeign.login(user, password);
         return response;
     }

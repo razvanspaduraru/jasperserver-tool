@@ -14,7 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Slf4j
 public class GatewayRoutesConfig {
 
-    @Value("${nexgen.jasper.uri}")
+    @Value("${jasper.jasper.uri}")
     private String jasper_uri;
 
 

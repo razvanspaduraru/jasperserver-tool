@@ -18,10 +18,10 @@ logging:
         web: DEBUG
         security: DEBUG
 
-nexgen:
+jasper:
   jasper:
     uri: http://jasperreports:8080
     admin-user: jasperadmin
     admin-password: jasperadmin
-    formio-user: jasperadmin
-    formio-password: jasperadmin
+    access-user: jasperadmin
+    access-password: jasperadmin

@@ -28,14 +28,14 @@ import static java.util.function.Function.identity;
 @Slf4j
 public class JasperReportGateway {
 
-    @Value("${nexgen.jasper.admin-user}")
+    @Value("${jasper.jasper.admin-user}")
     private String jasperAdminUser;
-    @Value("${nexgen.jasper.admin-password}")
+    @Value("${jasper.jasper.admin-password}")
     private String jasperAdminPassword;
-    @Value("${nexgen.jasper.formio-user}")
-    private String jasperFormIoUser;
-    @Value("${nexgen.jasper.formio-password}")
-    private String jasperFormIoPassword;
+    @Value("${jasper.jasper.access-user}")
+    private String jasperaccessUser;
+    @Value("${jasper.jasper.access-password}")
+    private String jasperaccessPassword;
 
     private final Map<String, MessageBodyDecoder> messageBodyDecoders;
     private final Map<String, MessageBodyEncoder> messageBodyEncoders;
@@ -57,8 +57,8 @@ public class JasperReportGateway {
             user = jasperAdminUser;
             password = jasperAdminPassword;
         } else {
-            user = jasperFormIoUser;
-            password = jasperFormIoPassword;
+            user = jasperaccessUser;
+            password = jasperaccessPassword;
         }
 
         if (uri.contains("?")) {
