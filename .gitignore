@@ -1,24 +1,63 @@
-# Compiled class file
+# ====== Java ======
 *.class
-
-# Log file
-*.log
-
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
 *.jar
 *.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
-*.rar
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
-replay_pid*
+# ====== Maven ======
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/.mvn/timing.properties
+
+# ====== Gradle ======
+/build/
+/gradle-app.setting
+/gradle-wrapper.jar
+/gradle-wrapper.properties
+/.gradle/
+
+# ====== IDE files ======
+# IntelliJ IDEA
+/.idea/
+/*.iml
+/out/
+
+# Eclipse
+/.classpath
+/.project
+/.settings/
+/bin/
+
+# VS Code
+/.vscode/
+
+# ====== OS Files ======
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# ====== Logs ======
+*.log
+logs/
+*.log.*
+
+# ====== Temporary files ======
+*.tmp
+*.temp
+*.swp
+*~
+
+# ====== Spring Boot ======
+# Embedded database files
+*.db
+*.h2.db
+
+# ====== Application properties/secrets ======
+# If you have local overrides or secrets, don't commit them
+application-local.properties
+application-*.yml
