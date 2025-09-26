@@ -1,4 +1,4 @@
-package com.tech.connections.jasperservertool.gateway.filters.jasper.request;
+package com.projects.test.jasperservertool.gateway.filters.jasper.request;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;

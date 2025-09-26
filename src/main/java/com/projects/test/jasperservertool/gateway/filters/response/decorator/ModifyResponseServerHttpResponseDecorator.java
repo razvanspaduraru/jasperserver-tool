@@ -1,6 +1,6 @@
-package com.tech.connections.jasperservertool.gateway.filters.response.decorator;
+package com.projects.test.jasperservertool.gateway.filters.response.decorator;
 
-import com.tech.connections.jasperservertool.gateway.filters.response.transformer.TransformResponse;
+import com.projects.test.jasperservertool.gateway.filters.response.transformer.TransformResponse;
 import org.reactivestreams.Publisher;
 import org.springframework.cloud.gateway.filter.factory.rewrite.CachedBodyOutputMessage;
 import org.springframework.cloud.gateway.filter.factory.rewrite.MessageBodyDecoder;

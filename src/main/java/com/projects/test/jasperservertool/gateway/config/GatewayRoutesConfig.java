@@ -1,8 +1,8 @@
-package com.tech.connections.jasperservertool.gateway.config;
+package com.projects.test.jasperservertool.gateway.config;
 
-import com.tech.connections.jasperservertool.gateway.filters.jasper.JasperReportGateway;
-import com.tech.connections.jasperservertool.gateway.filters.jasper.request.JasperGetReportByName;
-import com.tech.connections.jasperservertool.gateway.filters.jasper.request.JasperGetAdminFilter;
+import com.projects.test.jasperservertool.gateway.filters.jasper.JasperReportGateway;
+import com.projects.test.jasperservertool.gateway.filters.jasper.request.JasperGetReportByName;
+import com.projects.test.jasperservertool.gateway.filters.jasper.request.JasperGetAdminFilter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.route.RouteLocator;

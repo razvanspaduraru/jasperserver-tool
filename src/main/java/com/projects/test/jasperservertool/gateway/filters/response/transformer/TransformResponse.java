@@ -1,4 +1,4 @@
-package com.tech.connections.jasperservertool.gateway.filters.response.transformer;
+package com.projects.test.jasperservertool.gateway.filters.response.transformer;
 
 public interface TransformResponse {
     String applyTransform(String originalBody);

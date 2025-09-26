@@ -1,4 +1,4 @@
-package com.tech.connections.jasperservertool.gateway.filters.jasper.login;
+package com.projects.test.jasperservertool.gateway.filters.jasper.login;
 
 import feign.Response;
 import org.springframework.cloud.openfeign.FeignClient;

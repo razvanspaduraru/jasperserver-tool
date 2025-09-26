@@ -1,4 +1,4 @@
-package com.tech.connections.jasperservertool;
+package com.projects.test.jasperservertool;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

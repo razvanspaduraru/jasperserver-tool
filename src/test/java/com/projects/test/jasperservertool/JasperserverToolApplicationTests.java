@@ -1,4 +1,4 @@
-package com.tech.connections.jasperservertool;
+package com.projects.test.jasperservertool;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,7 +1,7 @@
-package com.tech.connections.jasperservertool.gateway.filters.jasper;
+package com.projects.test.jasperservertool.gateway.filters.jasper;
 
-import com.tech.connections.jasperservertool.gateway.filters.response.decorator.ModifyResponseServerHttpResponseDecorator;
-import com.tech.connections.jasperservertool.gateway.filters.response.transformer.JasperHtmlTransformerResponse;
+import com.projects.test.jasperservertool.gateway.filters.response.decorator.ModifyResponseServerHttpResponseDecorator;
+import com.projects.test.jasperservertool.gateway.filters.response.transformer.JasperHtmlTransformerResponse;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilter;
