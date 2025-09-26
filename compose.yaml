@@ -1,0 +1,81 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:15
+    container_name: postgres
+    environment:
+      POSTGRES_DB: jasper_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./src/main/resources/data.sql:/docker-entrypoint-initdb.d/data.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+
+  jasperreports:
+    image: geohost/bitnami-jasperreports:8.2.0-debian-11-r51
+    container_name: jasperreports
+    ports:
+      - "8081:8080"
+    environment:
+      JASPERREPORTS_USERNAME: jasperadmin
+      JASPERREPORTS_PASSWORD: jasperadmin
+      JASPERREPORTS_DATABASE_HOST: postgres
+      JASPERREPORTS_DATABASE_PORT_NUMBER: 5432
+      JASPERREPORTS_DATABASE_TYPE: postgresql
+      JASPERREPORTS_DATABASE_USER: postgres
+      JASPERREPORTS_DATABASE_PASSWORD: postgres
+      JASPERREPORTS_DATABASE_NAME: jasper_db
+    depends_on:
+      postgres:
+        condition: service_healthy
+    healthcheck:
+      test: [ "CMD-SHELL", "curl -f http://localhost:8080/jasperserver/login.html || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - backend
+
+  springboot-app:
+    build: .
+    container_name: springboot-app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      jasperreports:
+        condition: service_started
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/jasper_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+    networks:
+      - backend
+
+  frontend:
+    build:
+      context: ../jasperserver-tool-fe/jasperserver-tool-fe
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+    networks:
+      - backend
+
+volumes:
+  pgdata:
+
+networks:
+  backend:
+    driver: bridge
